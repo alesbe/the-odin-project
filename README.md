@@ -18,5 +18,5 @@ I made them. What I like about this course is that they give you an idea and som
 ## Can I contribute?
 This repository is intended to showcase the projects that the course proposed, so accepting contributions this time feels like *cheating*. If you want to contribute to any of my other projects go ahead!
 
-## Index
-*seems empty*
+## Project index
+- **Recipies**: A plain HTML site featuring 3 recipies divided in multiple files.
