@@ -2,6 +2,10 @@
 
 <img align="center">![](https://www.theodinproject.com/assets/og-logo-022832d4cefeec1d5266237be260192f5980f9bcbf1c9ca151b358f0ce1fd2df.png)</img>
 
+
+<h2 align="center"><a href="https://alesbe.github.io/the-odin-project/">View projects</a></h2>
+<hr>
+
 ## What is The Odin Project?
 [The Odin Project](https://www.theodinproject.com/) it's a fullstack course made by the community and open-source. In this repository I'll save all my projects that I will do through the course.
 
