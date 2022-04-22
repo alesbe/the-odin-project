@@ -4,7 +4,7 @@
 
 
 <h2 align="center"><a href="https://alesbe.github.io/the-odin-project/">View projects</a></h2>
-<hr>
+---
 
 ## What is The Odin Project?
 [The Odin Project](https://www.theodinproject.com/) it's a fullstack course made by the community and open-source. In this repository I'll save all my projects that I will do through the course.
