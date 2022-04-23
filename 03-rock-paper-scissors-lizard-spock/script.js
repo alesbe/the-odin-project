@@ -1,26 +1,26 @@
 // Game vars
-const options = ["rock", "paper", "scissors", "lizard", "spock"]
-let playerOption, computerOption
-let playerWins, action
+const options = ["rock", "paper", "scissors", "lizard", "spock"];
+let playerOption, computerOption;
+let playerWins, action;
 
 // HTML elements
 const wrapper = document.getElementById('wrapper');
-const scorePlayer = document.getElementById('score-player')
-const scoreComputer = document.getElementById('score-computer')
-const resultText = document.getElementById('result__text')
+const scorePlayer = document.getElementById('score-player');
+const scoreComputer = document.getElementById('score-computer');
+const resultText = document.getElementById('result__text');
 
 // onClick function
 function playerChoose(_playerOption) {
-    playerOption = _playerOption
-    computerOption = computerChoose()
+    playerOption = _playerOption;
+    computerOption = computerChoose();
 
     let roundInfo = calculateWinner(playerOption, computerOption);
 
-    animate(roundInfo)
+    animate(roundInfo);
 }
 
 function computerChoose() {
-    return options[Math.floor(Math.random() * options.length)]
+    return options[Math.floor(Math.random() * options.length)];
 }
 
 
@@ -28,35 +28,35 @@ function animate(roundInfo) {
     switch (roundInfo.playerWins) {
         case true:
             // Update score
-            scorePlayer.textContent = parseInt(scorePlayer.textContent) + 1
+            scorePlayer.textContent = parseInt(scorePlayer.textContent) + 1;
 
             // Change background
-            wrapper.style.backgroundColor = "rgba(0, 255, 0, 0.2)"
+            wrapper.style.backgroundColor = "rgba(0, 255, 0, 0.2)";
 
             // Change result text
-            resultText.style.visibility = 'visible'
-            resultText.textContent = `Yes! ${capitalize(playerOption)} ${roundInfo.action} ${capitalize(computerOption)}!`
+            resultText.style.visibility = 'visible';
+            resultText.textContent = `Yes! ${capitalize(playerOption)} ${roundInfo.action} ${capitalize(computerOption)}!`;
             break;
     
         case false:
             // Update score
-            scoreComputer.textContent = parseInt(scoreComputer.textContent) + 1
+            scoreComputer.textContent = parseInt(scoreComputer.textContent) + 1;
 
             // Change background
-            wrapper.style.backgroundColor = "rgba(255, 0, 0, 0.2)"
+            wrapper.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
 
             // Change result text
-            resultText.style.visibility = 'visible'
-            resultText.textContent = `Oh no! ${capitalize(computerOption)} ${roundInfo.action} ${capitalize(playerOption)}!`
+            resultText.style.visibility = 'visible';
+            resultText.textContent = `Oh no! ${capitalize(computerOption)} ${roundInfo.action} ${capitalize(playerOption)}!`;
             break;
 
         case null:
             // Change background
-            wrapper.style.backgroundColor = "rgb(255, 255, 255)"
+            wrapper.style.backgroundColor = "rgb(255, 255, 255)";
 
             // Change result text
-            resultText.style.visibility = 'visible'
-            resultText.textContent = `It was a tie! ${capitalize(computerOption)} does nothing to ${capitalize(playerOption)}!`
+            resultText.style.visibility = 'visible';
+            resultText.textContent = `It was a tie! ${capitalize(computerOption)} does nothing to ${capitalize(playerOption)}!`;
             break;
         default:
             break;
@@ -64,7 +64,7 @@ function animate(roundInfo) {
 }
 
 function capitalize(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1)
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }
 function calculateWinner(playerOption, computerOption) {
     if(playerOption == computerOption) {return {playerWins: null, action: null}}
