@@ -58,7 +58,8 @@ body {
 #result__wrapper {
     visibility: hidden;
     display: flex;
-    font-size: 20px;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 /* Score */
