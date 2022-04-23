@@ -7,44 +7,46 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <div id="navbar">
+        <div class="navbar">
             <div class="navbar__logo">
                 <p>Header Logo</p>
             </div>
 
-            <div class="navbar__item">
-                <a>header link one</a>
-            </div>
-
-            <div class="navbar__item">
-                <a>header link two</a>
-            </div>
-
-            <div class="navbar__item">
-                <a>header link three</a>
+            <div class="navbar__items">
+                <div class="navbar__item">
+                    <a>header link one</a>
+                </div>
+    
+                <div class="navbar__item">
+                    <a>header link two</a>
+                </div>
+    
+                <div class="navbar__item">
+                    <a>header link three</a>
+                </div>
             </div>
         </div>
 
         <div class="wrapper" id="sect-1">
-            <div class="sect-1__text-container">
+            <div id="sect-1__text-container" class="sect-1__item">
                 <h1>This website is awesome</h1>
                 <p>
                     This website has some subtext that goes
                     here under the main title. It's a smaller font
                     and the color is lower contrast
                 </p>
-                <div class="button sect-1__text-container__button"><p>Sign Up</p></div>
+                <div class="button button--sect-1"><p>Sign Up</p></div>
             </div>
 
-            <div class="sect-1__placeholder">
+            <div id="sect-1__placeholder" class="sect-1__item">
                 <p>this is a placeholder for an image</p>
             </div>
         </div>
         
         <div class="wrapper" id="sect-2">
-            <h2 class="sect-2__title">Some random information.</h2>
+            <h2 id="sect-2__title">Some random information.</h2>
 
-            <div class="sect-2__container">
+            <div id="sect-2__container">
                 <div class="sect-2__card">
                     <div class="sect-2__card__image-container"><img></div>
                     <div class="sect-2__card__text"><p>
@@ -74,6 +76,7 @@
                 </div>
             </div>
         </div>
+
 
         <div class="wrapper" id="sect-3">
             <p class="sect-3__quote">
