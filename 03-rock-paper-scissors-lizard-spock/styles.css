@@ -14,6 +14,7 @@ body {
     justify-content: space-evenly;
     width: 100vw;
     height: 100vh;
+    transition: 0.3s;
 }
 
 /* Title */
@@ -51,6 +52,13 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 26px;
+}
+
+/* Result */
+#result__wrapper {
+    visibility: hidden;
+    display: flex;
+    font-size: 20px;
 }
 
 /* Score */
