@@ -6,6 +6,7 @@ body {
     padding: 0;
 }
 
+/* Main wrapper */
 #wrapper {
     display: flex;
     flex-direction: column;
@@ -15,12 +16,59 @@ body {
     height: 100vh;
 }
 
+/* Title */
+#title {
+    font-size: 56px;
+}
+
+/* Option cards */
 #options {
     display: flex;
 }
-
-#score-wrapper {
+.option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1vw;
+}
+.option__image {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.option__image > img {
+    height: 8vw;
+    width: 8vw;
+}
+.option__text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+}
+
+/* Score */
+#score__wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.score__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5vw;
+}
+.score__title {
+    font-size: 30px;
+    padding: 0;
+    margin: 0;
+}
+.score__points {
+    font-size: 20px;
+    padding: 0;
+    margin: 1vw;
 }
