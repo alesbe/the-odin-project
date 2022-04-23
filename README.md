@@ -19,6 +19,7 @@ I made them. What I like about this course is that they give you an idea and som
 This repository is intended to showcase the projects that the course proposed, so accepting contributions this time feels like *cheating*. If you want to contribute to any of my other projects go ahead!
 
 ## Project index
+If you didn't see the project link [here](https://alesbe.github.io/the-odin-project/) is another one!
 *Note: Usually projects escalate in complexity, so normally each project will be more interesting to watch than the previous one!*
 
 - **Recipies**: A plain HTML site featuring 3 recipies divided in multiple files.
