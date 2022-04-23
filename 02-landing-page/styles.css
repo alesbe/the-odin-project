@@ -123,15 +123,15 @@ body {
     align-items: center;
     flex-direction: column;
     flex-wrap: wrap;
-    width: 200px;
+    width: 10vw;
     margin-left: 2vw;
     margin-right: 2vw;
 }
 .sect-2__card__image-container{
     border: 5px solid #3882F6;
     border-radius: 10px;
-    height: 200px;
-    width: 200px;
+    height: 10vw;
+    width: 10vw;
 }
 .sect-2__card__text{
     display: flex;
@@ -180,6 +180,8 @@ body {
     align-items: center;
     padding-top: 5vh;
     padding-bottom: 5vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
     margin-top: 10vh;
     margin-bottom: 10vh;
     border-radius: 10px;
