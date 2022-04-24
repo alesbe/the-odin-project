@@ -68,7 +68,7 @@ const createGrid = async () => {
 
 // Add event listener to the item
 const attachItemListeners = (element) => {
-    element.addEventListener('mousedown', (e) => { mouseDown = true });
+    element.addEventListener('mousedown', (e) => { mouseDown = true; e.preventDefault()},);
     element.addEventListener('mouseup', (e) => { mouseDown = false });
     element.addEventListener('mouseover', () => {
         if(mouseDown || !drawMode) {
