@@ -6,12 +6,12 @@ body {
     margin: 0;
     background-color: #23272a;
     font-family: 'Comfortaa', cursive;
-    animation: background-change 60s infinite;
+    animation: background-change 30s infinite;
 }
 @keyframes background-change {
     0% {background-color: #7289DA;}
     25% {background-color: #b9b9b9;}
-    50% {background-color: #2C2F33}
+    50% {background-color: #404449}
     75% {background-color: #b9b9b9;}
     100% {background-color: #7289DA;}
 }
@@ -29,6 +29,40 @@ main {
     gap: 5em;
     max-width: 65em;
     margin: 5em auto;
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+#footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+}
+#footer-container > p {
+    margin: 0;
+    padding: 0;
+    font-weight: 700;
+    color: #23272A;
+}
+#footer-container > p > a {
+    color: #23272A;
+}
+#heart {
+    animation: beat 1.5s infinite;
+    max-width: 2em;
+    margin: 0.5em;
+}
+@keyframes beat {
+    0% {transform: scale(1);}
+    25% {transform: scale(1.2);}
+    50% {transform: scale(1.1);}
+    75% {transform: scale(1.3);}
 }
 
 /* Header */
