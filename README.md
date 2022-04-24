@@ -24,4 +24,5 @@ If you didn't see the project link [here](https://alesbe.github.io/the-odin-proj
 
 - **Recipies**: A plain HTML site featuring 3 recipies divided in multiple files.
 - **Landing page**: A landing page prototype made with pure HTML and CSS.
-- **Rock, paper, scissors, lizard, spock**: Awesome game made with pure JavaScript. [Just go and enjoy](https://alesbe.github.io/the-odin-project/03-rock-paper-scissors-lizard-spock/index.html).
+- **Rock, paper, scissors, lizard, spock**: Awesome game made with pure JavaScript. Just go and enjoy.
+- **Etch-a-Sketch**: If you've like the last one, you're gonna love this one. I had so much fun making this and also learned a lot. 100% recommended!
