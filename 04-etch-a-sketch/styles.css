@@ -4,11 +4,23 @@
 body {
     padding: 0;
     margin: 0;
+    background-color: #23272a;
     font-family: 'Comfortaa', cursive;
+    animation: background-change 60s infinite;
+}
+@keyframes background-change {
+    0% {background-color: #7289DA;}
+    25% {background-color: #b9b9b9;}
+    50% {background-color: #2C2F33}
+    75% {background-color: #b9b9b9;}
+    100% {background-color: #7289DA;}
 }
 header {
-    text-align: center;
-    padding: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20vh;
+    padding: 1em;
 }
 main {
     display: flex;
@@ -23,9 +35,10 @@ main {
 #title {
     padding: 0;
     margin: 0;
-    color: #5865F2;
-    font-size: 80px;
-    font-weight: 600;
+    padding-top: 1em;
+    color: #23272A;
+    font-size: 120px;
+    font-weight: 700;
 }
 
 /* Settings */
@@ -34,13 +47,29 @@ main {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    background-color: #23272A;
+    background-color: #2c2f33;
     width: 10em;
     height: 20em;
     padding: 1em;
-    border: 0.5em solid black;
+    border: 0.5em solid #23272a;
     border-radius: 0.5em;
     overflow: hidden;
+}
+
+button {
+    padding: 1em;
+    border: 0.2em solid #23272a;
+    border-radius: 1em;
+    font-family: 'Comfortaa', cursive;
+    font-weight: bold;
+    background-color: #b9b9b9;
+    transition: transform 0.1s;
+}
+button:hover {
+    transform: scale(1.1);
+}
+.button--selected {
+    background-color: #54be46;
 }
 
 input[type=color] {
@@ -59,13 +88,6 @@ input[type=color]::-webkit-color-swatch-wrapper {
     border-radius: 50%;
     padding: 0;
 }
-button {
-    background-color: #b9b9b9;
-    padding: 1em;
-    border: none;
-    border-radius: 1em;
-    font-family: 'Comfortaa', cursive;
-}
 #grid-size__container {
     display: flex;
     flex-direction: column;
@@ -80,8 +102,8 @@ button {
 /* Grid */
 #grid__container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
     width: 30em;
     height: 30em;
     border: 0.5em solid #23272A;
