@@ -111,3 +111,6 @@ input[type=color]::-webkit-color-swatch-wrapper {
     border-radius: 1em;
     overflow: hidden;
 }
+.grid__item:hover {
+    cursor: crosshair;
+}
