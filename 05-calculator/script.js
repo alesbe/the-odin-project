@@ -32,73 +32,104 @@ const btnEqual = document.getElementById("btn__=");
   Consts and vars
 */
 
-let numConstructor = "" // Aux variable to hold digits until form the desired number
-let numAccumulator = 0 // Hold first number
+let numConstructor = ""; // Aux variable to hold digits until form the desired number
+let numAccumulator = 0; // Hold first number
 
-let opSymbol = "" // Operation symbol
-let opResult = 0 // Final result
+let opSymbol = ""; // Operation symbol
+let opResult = 0; // Final result
 
 /*
   Functions
 */
 
-// Calculator functions
+// Display functions
 const displayResultSmall = (display) => { displaySmallEl.textContent = display };
 const displayResultBig = (display) => { displayBigEl.textContent = display };
 
+// Utils functions
 const appendDigit = (number) => {
     numConstructor += number.toString();
     displayResultBig(numConstructor);
 };
-
 const setOperation = (symbol) => {
-    opSymbol = symbol
-
+    opSymbol = symbol;
+    
     displayResultSmall(numConstructor);
     displayResultBig("0");
     
-    numAccumulator = parseInt(numConstructor);
+    numAccumulator = parseFloat(numConstructor)
     numConstructor = ""
 }
 
+// Calculator functions
+const clear = () => {
+    // Reset every value
+    numConstructor = "";
+    numAccumulator = 0;
+    opSymbol = "";
+    opResult = 0;
+
+    // Reset display
+    displayResultBig(0);
+    displayResultSmall(0);
+}
+const addDot = () => {
+    numConstructor += "."
+    displayResultBig(numConstructor)
+}
+const deleteDigit = () => {
+    if(numConstructor.length > 1) {
+        numConstructor = numConstructor.slice(0, -1);
+    } else {
+        numConstructor = "0";
+    }
+
+    displayResultBig(numConstructor);
+}
 const calculate = () => {
     switch (opSymbol) {
         case '+':
-            opResult = numAccumulator + parseInt(numConstructor)
+            opResult = numAccumulator + parseFloat(numConstructor);
             break;
     
         case '-':
-            opResult = numAccumulator - parseInt(numConstructor)
+            opResult = numAccumulator - parseFloat(numConstructor);
             break;
         
         case 'x':
-            opResult = numAccumulator * parseInt(numConstructor)
+            opResult = numAccumulator * parseFloat(numConstructor);
             break;
         
         case '/':
-            opResult = numAccumulator / parseInt(numConstructor)
+            opResult = numAccumulator / parseFloat(numConstructor);
             break;
 
         case '^':
-            opResult = numAccumulator ** parseInt(numConstructor)
+            opResult = numAccumulator ** parseFloat(numConstructor);
             break;
         default:
             break;
     }
 
+    // Remove decimals in int results
+    if(Number.isInteger(opResult)) {
+        opResult = parseInt(opResult)
+    }
+
+    // Display to screen
     displayResultSmall("0");
     displayResultBig(opResult);
 
     // Hold result for next operation
-    numAccumulator = opResult
+    numConstructor = opResult.toString();
 }
 
 /*
   Event listeners
 */
-btnClear.addEventListener('click', (e) => {console.log('a')});
+btnClear.addEventListener('click', (e) => {clear()});
 btnPow.addEventListener('click', (e) => {setOperation("^")});
-btnDel.addEventListener('click', (e) => {console.log('a')});
+btnDel.addEventListener('click', (e) => {deleteDigit()});
 btnDiv.addEventListener('click', (e) => {setOperation("/")});
 
 btn7.addEventListener('click', (e) => {appendDigit(7)});
@@ -117,5 +148,5 @@ btn3.addEventListener('click', (e) => {appendDigit(3)});
 btnAdd.addEventListener('click', (e) => {setOperation("+")});
 
 btn0.addEventListener('click', (e) => {appendDigit(0)});
-btnDot.addEventListener('click', (e) => {console.log('a')});
+btnDot.addEventListener('click', (e) => {addDot()});
 btnEqual.addEventListener('click', (e) => {calculate()});
