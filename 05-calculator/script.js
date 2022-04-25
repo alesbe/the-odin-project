@@ -1,8 +1,8 @@
 /*
   HTML elements
 */
-let displaySmall = document.getElementById("result__small");
-let displayBig = document.getElementById("result__big");
+let displaySmallEl = document.getElementById("result__small");
+let displayBigEl = document.getElementById("result__big");
 
 const btnClear = document.getElementById("btn__C");
 const btnPow = document.getElementById("btn__pow");
@@ -32,18 +32,90 @@ const btnEqual = document.getElementById("btn__=");
   Consts and vars
 */
 
+let numConstructor = "" // Aux variable to hold digits until form the desired number
+let numAccumulator = 0 // Hold first number
 
+let opSymbol = "" // Operation symbol
+let opResult = 0 // Final result
 
 /*
   Functions
 */
 
-const displayResultSmall = (text) => { displaySmall.textContent = text }
-const displayResultBig = (text) => { displayBig.textContent = text; }
+// Calculator functions
+const displayResultSmall = (display) => { displaySmallEl.textContent = display };
+const displayResultBig = (display) => { displayBigEl.textContent = display };
+
+const appendDigit = (number) => {
+    numConstructor += number.toString();
+    displayResultBig(numConstructor);
+};
+
+const setOperation = (symbol) => {
+    opSymbol = symbol
+
+    displayResultSmall(numConstructor);
+    displayResultBig("0");
+    
+    numAccumulator = parseInt(numConstructor);
+    numConstructor = ""
+}
+
+const calculate = () => {
+    switch (opSymbol) {
+        case '+':
+            opResult = numAccumulator + parseInt(numConstructor)
+            break;
+    
+        case '-':
+            opResult = numAccumulator - parseInt(numConstructor)
+            break;
+        
+        case 'x':
+            opResult = numAccumulator * parseInt(numConstructor)
+            break;
+        
+        case '/':
+            opResult = numAccumulator / parseInt(numConstructor)
+            break;
+
+        case '^':
+            opResult = numAccumulator ** parseInt(numConstructor)
+            break;
+        default:
+            break;
+    }
+
+    displayResultSmall("0");
+    displayResultBig(opResult);
+
+    // Hold result for next operation
+    numAccumulator = opResult
+}
 
 /*
   Event listeners
 */
-btn0.addEventListener('click', () => {console.log('a')});
+btnClear.addEventListener('click', (e) => {console.log('a')});
+btnPow.addEventListener('click', (e) => {setOperation("^")});
+btnDel.addEventListener('click', (e) => {console.log('a')});
+btnDiv.addEventListener('click', (e) => {setOperation("/")});
 
-btnClear.onclick = () => {console.log('b')}
+btn7.addEventListener('click', (e) => {appendDigit(7)});
+btn8.addEventListener('click', (e) => {appendDigit(8)});
+btn9.addEventListener('click', (e) => {appendDigit(9)});
+btnMult.addEventListener('click', (e) => {setOperation("x")});
+
+btn4.addEventListener('click', (e) => {appendDigit(4)});
+btn5.addEventListener('click', (e) => {appendDigit(5)});
+btn6.addEventListener('click', (e) => {appendDigit(6)});
+btnSub.addEventListener('click', (e) => {setOperation("-")});
+
+btn1.addEventListener('click', (e) => {appendDigit(1)});
+btn2.addEventListener('click', (e) => {appendDigit(2)});
+btn3.addEventListener('click', (e) => {appendDigit(3)});
+btnAdd.addEventListener('click', (e) => {setOperation("+")});
+
+btn0.addEventListener('click', (e) => {appendDigit(0)});
+btnDot.addEventListener('click', (e) => {console.log('a')});
+btnEqual.addEventListener('click', (e) => {calculate()});
