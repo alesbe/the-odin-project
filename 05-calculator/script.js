@@ -5,7 +5,7 @@ let displaySmallEl = document.getElementById("result__small");
 let displayBigEl = document.getElementById("result__big");
 
 const btnClear = document.getElementById("btn__C");
-const btnPow = document.getElementById("btn__pow");
+const btnSign = document.getElementById("btn__sign");
 const btnDel = document.getElementById("btn__del");
 const btnDiv = document.getElementById("btn__/");
 
@@ -35,6 +35,7 @@ const btnEqual = document.getElementById("btn__=");
 let numConstructor = ""; // Aux variable to hold digits until form the desired number
 let numAccumulator = 0; // Hold first number
 
+let opSign = "" // Num positive or negative
 let opSymbol = ""; // Operation symbol
 let opResult = 0; // Final result
 
@@ -54,10 +55,10 @@ const appendDigit = (number) => {
 const setOperation = (symbol) => {
     opSymbol = symbol;
     
-    displayResultSmall(numConstructor);
+    displayResultSmall(opSign + numConstructor);
     displayResultBig("0");
     
-    numAccumulator = parseFloat(numConstructor)
+    numAccumulator = parseFloat(opSign + numConstructor)
     numConstructor = ""
 }
 
@@ -74,8 +75,21 @@ const clear = () => {
     displayResultSmall(0);
 }
 const addDot = () => {
-    numConstructor += "."
-    displayResultBig(numConstructor)
+    // Check if number contains already a dot and is not the first char
+    if( !numConstructor.includes(".") && numConstructor.length > 1 ) {
+        numConstructor += "."
+        displayResultBig(numConstructor)
+    }
+}
+const switchSign = () => {
+    // If positive
+    if(opSign == "") {
+        opSign = "-";
+    } else {
+        opSign = "";
+    }
+
+    displayResultBig(opSign + numConstructor);
 }
 const deleteDigit = () => {
     if(numConstructor.length > 1) {
@@ -103,10 +117,6 @@ const calculate = () => {
         case '/':
             opResult = numAccumulator / parseFloat(numConstructor);
             break;
-
-        case '^':
-            opResult = numAccumulator ** parseFloat(numConstructor);
-            break;
         default:
             break;
     }
@@ -128,7 +138,7 @@ const calculate = () => {
   Event listeners
 */
 btnClear.addEventListener('click', (e) => {clear()});
-btnPow.addEventListener('click', (e) => {setOperation("^")});
+btnSign.addEventListener('click', (e) => {switchSign()});
 btnDel.addEventListener('click', (e) => {deleteDigit()});
 btnDiv.addEventListener('click', (e) => {setOperation("/")});
 
